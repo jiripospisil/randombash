@@ -1,0 +1,9 @@
+drop table if exists quotes;
+create table quotes (id integer primary key, quote text) strict;
+
+.load /usr/lib/sqlean/sqlean
+
+insert into quotes(id, quote) select regexp_substr(name, '[0-9]+'), cast(fileio_read(name) as text) from fileio_ls('../bash_irc_quotes/cleaned') where name like '%.txt';
+
+.output randombash.sql
+.dump quotes

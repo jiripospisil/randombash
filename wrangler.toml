@@ -1,0 +1,10 @@
+name = "randombash"
+compatibility_date = "2023-01-01"
+
+[placement]
+mode = "smart"
+
+[[d1_databases]]
+binding = "db"
+database_name = "randombash"
+database_id = "576ced7f-926d-40d7-8df8-663a49fd51bc"
